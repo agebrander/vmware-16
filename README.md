@@ -8,16 +8,16 @@ with thanks to gdelcampo (https://communities.vmware.com/t5/VMware-Workstation-P
 Anyway, as user root you can manually compile the vmware host modules.
 This will solve the error.
 
-cd /usr/lib/vmware/modules/source
-tar xvf vmnet.tar
-cd vmnet-only
-make
-cd ..
-tar xvf vmmon.tar
-cd vmmon-only
-make
-cd ..
-cp vmmon.o /lib/modules/`uname -r`/kernel/drivers/misc/vmmon.ko
-cp vmnet.o /lib/modules/`uname -r`/kernel/drivers/misc/vmnet.ko
-depmod -a
-systemctl restart vmware.service
+cd /usr/lib/vmware/modules/source<br>
+tar xvf vmnet.tar<br>
+cd vmnet-only<br>
+make<br>
+cd ..<br>
+tar xvf vmmon.tar<br>
+cd vmmon-only<br>
+make<br>
+cd ..<br>
+cp vmmon.o /lib/modules/`uname -r`/kernel/drivers/misc/vmmon.ko<br>
+cp vmnet.o /lib/modules/`uname -r`/kernel/drivers/misc/vmnet.ko<br>
+depmod -a<br>
+systemctl restart vmware.service<br>
